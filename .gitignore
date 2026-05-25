@@ -1,0 +1,11 @@
+# Environments
+venv/
+env/
+__pycache__/
+
+# Mac system files
+.DS_Store
+
+# Dataset & Models
+models/*.pkl
+models/*.joblib
