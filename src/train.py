@@ -25,13 +25,13 @@ def main():
     
     # (Filter bahasa Inggris dihapus karena dataset BBC sudah murni berbahasa Inggris)
     
-    # 3. UPDATE NAMA KOLOM: Hapus data kosong berdasarkan kolom asli di dataset BBC ('content' dan 'category')
-    df = df.dropna(subset=['content', 'category'])
+    # 3. UPDATE NAMA KOLOM: Hapus data kosong berdasarkan kolom asli di dataset BBC ('title' dan 'category')
+    df = df.dropna(subset=['title', 'category'])
     
     # 2. Data Preprocessing (menggunakan spaCy)
     print("Preprocessing data with spaCy (this might take a moment)...")
-    # 4. UPDATE TARGET FITUR: Gunakan kolom 'content'
-    df['clean_text'] = df['content'].apply(preprocess_text_spacy)
+    # 4. UPDATE TARGET FITUR: Gunakan kolom 'title'
+    df['clean_text'] = df['title'].apply(preprocess_text_spacy)
     
     # Split Data (Fitur: clean_text, Target: category)
     # 5. UPDATE TARGET LABEL: Gunakan kolom 'category'
